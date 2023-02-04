@@ -1,6 +1,6 @@
 const express = require('express');
 const db = require('./config/connection');
-// const routes = require('./routes');
+const routes = require('./routes');
 
 const { User, Post, Response, Friend } = require('./models');
 
@@ -9,9 +9,9 @@ const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(routes);
+app.use(routes);
 
-app.get('/all-books', (req, res) => {
+/*app.get('/all-books', (req, res) => {
 
  Book.find({}, (err, result) => {
     if (err) {
@@ -21,6 +21,7 @@ app.get('/all-books', (req, res) => {
     }
   });
 });
+*/
 
 db.once('open', () => {
   app.listen(PORT, () => {

@@ -12,7 +12,7 @@ There are a number of API routes available:
 - POST `/api/users` - Username and email needed. Adds a new user to the database.
 - PUT `/api/users/##` - Request body needed. Edits a specific user's information. (replace ## with the user's _id)
 - DELETE `/api/users/##` - Deletes a specific user. (replace ## with the user's _id)
-- POST `/api/users/##/friends` - Adds a new friend to the friendlist of the user with the id ##. Request body needs to contain the user id of the friend.
+- POST `/api/users/##/friends` - Adds a new friend to the friendlist of the user with the id ##. Request body needs to contain the user id of the friend, in quotes and brackets.
 - DELETE `/api/users/##/friends/###` - Removes the user with id ### from the friend list of the user with id ##
 
 ### Thought routes
@@ -21,7 +21,7 @@ There are a number of API routes available:
 - POST `/api/thoughs` - Adds a new thought to the database.
 - PUT `/api/thoughts/##` - Request body needed. Edits a specific thought. (replace ## with the thought's _id)
 - DELETE `/api/thoughts/##` - Deletes a specific thought. (replace ## with the user's _id)
-- POST `/api/thoughts/##/reactions` - Adds a new friend to the friendlist of the user with the id ##. Request body needs to contain the user id of the friend.
+- POST `/api/thoughts/##/reactions` - Adds a new friend to the friendlist of the user with the id ##. Request body should contain the username and the message as 'reactionBody'.
 - DELETE `/api/thoughts/##/reactions/###` - Removes the reaction with reaction id ### from the thought with id ##
 
 ## Questions

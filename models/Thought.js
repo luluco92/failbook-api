@@ -43,11 +43,12 @@ postSchema.virtual('reactionCount')
     return this.reactions.length;
   });
 
-postSchema.virtual('formatDate')
+/*postSchema.virtual('formatDate')
   // Getter
   .get(function () {
 //    return `${this.createdAt.getMonth()+1}/${this.createdAt.getDate()}/${this.createdAt.getFullYear()}`;
   });
+*/
 
 // Initialize our Post model
 const Thought = model('post', postSchema);

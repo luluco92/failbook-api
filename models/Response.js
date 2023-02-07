@@ -18,20 +18,22 @@ const responseSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      get: formatdate
     },
   },
   {
     toJSON: {
       virtuals: true,
+      getters: true,
     },
     id: false,
   }
 );
 
-responseSchema.virtual('formatDate')
-  // Getter
-  .get(function () {
-    return `${this.createdAt.getMonth()+1}/${this.createdAt.getDate()}/${this.createdAt.getFullYear()}`;
-  });
+
+
+function formatdate(x) {
+return `${x.getMonth()+1}/${x.getDate()}/${x.getFullYear()} at ${x.toLocaleTimeString()}`;
+}
 
 module.exports = responseSchema;
